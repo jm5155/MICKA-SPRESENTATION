@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Operating Systems — Full Lesson Deck</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="deck" id="deck">
+
+  <!-- =========================================================
+       PHASE 1 — OPENING
+       ========================================================= -->
+
+  <section class="slide" data-phase="opening">
+    <div class="title-slab panel fadeUp d1">
+      <div class="kicker fadeUp d1">Operating Systems</div>
+      <h1 class="fadeUp d2">Let's Get Started</h1>
+      <p class="fadeUp d3">A quick look back, then a fun warm-up before we dive into today's topic.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="opening">
+    <div class="topic-title-slab panel fadeUp d1">
+      <div class="kicker fadeUp d1">Review of the Previous Lesson</div>
+      <h1 class="fadeUp d2">Quick Recall</h1>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="opening">
+    <div class="header-panel panel fadeUp d1">
+      <div class="kicker">Review of the Previous Lesson</div>
+      <h2>Quick Recall</h2>
+    </div>
+    <div class="stage recessed fadeUp d2" style="padding:36px 40px;">
+      <div class="prompt-eyebrow">Question</div>
+      <div class="prompt-text">What is an operating system, and what is its function in a computer?</div>
+    </div>
+    <div class="caption panel-sm fadeUp d3">Before we proceed to our new topic, let's have a quick review. Let me ask someone.</div>
+  </section>
+
+  <section class="slide" data-phase="opening">
+    <div class="topic-title-slab panel fadeUp d1">
+      <div class="kicker fadeUp d1">Warm-Up</div>
+      <h1 class="fadeUp d2">Guess the Gibberish Word</h1>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="opening">
+    <div class="header-panel panel fadeUp d1">
+      <div class="kicker">Warm-Up</div>
+      <h2>Guess the Gibberish Word</h2>
+    </div>
+    <div class="stage recessed fadeUp d2" style="padding:36px 40px; align-items:center; display:flex; flex-direction:column;">
+      <div class="live-label"><span class="live-dot"></span> HOW TO PLAY</div>
+      <p class="instructions-text">I will present a funny-sounding, made-up phrase related to today's topic.</p>
+      <div class="step-line">
+        <div class="step-num panel-sm" style="color:var(--cyan)">1</div>
+        <p>Students must read it out loud, and by its sound, figure out the real word or term it represents.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="opening">
+    <div class="single-flip-wrap fadeUp d1">
+      <div class="kicker" style="text-align:center; width:100%;">Example</div>
+      <div class="demo-box-big panel">
+        <span class="demo-from-big">"Dawn dutch mice tough"</span>
+        <span class="demo-arrow-big">↓</span>
+        <span class="demo-to-big">"Don't touch my stuff"</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="opening">
+    <div class="single-flip-wrap fadeUp d1">
+      <div class="flip-card big phrase" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="dot" style="background:var(--cyan)"></span><h3>"Tyme chair"</h3><span class="tap-hint">Tap to reveal</span></div>
+          <div class="flip-back"><div class="answer-label">The Real Term Is</div><h4 style="color:var(--cyan)">Time-share</h4></div>
+        </div>
+      </div>
+      <div class="single-caption">Tap the card to flip it</div>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="opening">
+    <div class="single-flip-wrap fadeUp d1">
+      <div class="flip-card big phrase" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="dot" style="background:var(--amber)"></span><h3>"Sing go you sir"</h3><span class="tap-hint">Tap to reveal</span></div>
+          <div class="flip-back"><div class="answer-label">The Real Term Is</div><h4 style="color:var(--amber)">Single user</h4></div>
+        </div>
+      </div>
+      <div class="single-caption">Tap the card to flip it</div>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="opening">
+    <div class="single-flip-wrap fadeUp d1">
+      <div class="flip-card big phrase" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="dot" style="background:var(--cyan)"></span><h3>"Badge par sis"</h3><span class="tap-hint">Tap to reveal</span></div>
+          <div class="flip-back"><div class="answer-label">The Real Term Is</div><h4 style="color:var(--cyan)">Batch process</h4></div>
+        </div>
+      </div>
+      <div class="single-caption">Tap the card to flip it</div>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="opening">
+    <div class="closing-slab panel fadeUp d1">
+      <div class="kicker">Let's Begin</div>
+      <h2>Now, Let's Talk Operating Systems</h2>
+      <p>Time to connect these fun terms to today's real lesson.</p>
+      <div class="dots">
+        <div class="pip"><span style="background:var(--cyan)"></span></div>
+        <div class="pip"><span style="background:var(--amber)"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       PHASE 2 — DISCUSSION
+       Generated at runtime by script.js from the OS-types data,
+       so the live SVG diagrams share this exact same slide shell.
+       ========================================================= -->
+  <div id="discussionSlides"></div>
+
+  <!-- =========================================================
+       PHASE 3 — CLOSING
+       ========================================================= -->
+
+  <section class="slide" data-phase="closing">
+    <div class="title-slab panel fadeUp d1">
+      <div class="kicker fadeUp d1">Operating Systems</div>
+      <h1 class="fadeUp d2">Types of Operating Systems &amp; Why They Matter</h1>
+      <p class="fadeUp d3">Wrapping up the lesson: what we've learned, how it applies to daily life, and how it will be checked.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="closing">
+    <div class="topic-title-slab panel fadeUp d1">
+      <div class="kicker fadeUp d1">Wrap-up</div>
+      <h1 class="fadeUp d2">Bringing It All Together</h1>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="closing">
+    <div class="single-flip-wrap fadeUp d1">
+      <div class="flip-card big" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="dot" style="background:var(--cyan)"></span><h3>Batch</h3><span class="tap-hint">Tap to reveal</span></div>
+          <div class="flip-back"><h4><span class="dot-sm" style="background:var(--cyan)"></span>Batch</h4><p>Jobs grouped and run with no user interaction — efficient for repetitive, large-volume tasks.</p></div>
+        </div>
+      </div>
+      <div class="single-caption">Tap the card to flip it</div>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="closing">
+    <div class="single-flip-wrap fadeUp d1">
+      <div class="flip-card big" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="dot" style="background:var(--amber)"></span><h3>Time-Sharing</h3><span class="tap-hint">Tap to reveal</span></div>
+          <div class="flip-back"><h4><span class="dot-sm" style="background:var(--amber)"></span>Time-Sharing</h4><p>CPU time is sliced across many users at once so everyone feels served in real time.</p></div>
+        </div>
+      </div>
+      <div class="single-caption">Tap the card to flip it</div>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="closing">
+    <div class="single-flip-wrap fadeUp d1">
+      <div class="flip-card big" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="dot" style="background:var(--cyan)"></span><h3>Distributed</h3><span class="tap-hint">Tap to reveal</span></div>
+          <div class="flip-back"><h4><span class="dot-sm" style="background:var(--cyan)"></span>Distributed</h4><p>Multiple independent computers work together and share resources as one system.</p></div>
+        </div>
+      </div>
+      <div class="single-caption">Tap the card to flip it</div>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="closing">
+    <div class="single-flip-wrap fadeUp d1">
+      <div class="flip-card big" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="dot" style="background:var(--amber)"></span><h3>Network</h3><span class="tap-hint">Tap to reveal</span></div>
+          <div class="flip-back"><h4><span class="dot-sm" style="background:var(--amber)"></span>Network</h4><p>Connects computers so files, printers, and resources can be shared across a network.</p></div>
+        </div>
+      </div>
+      <div class="single-caption">Tap the card to flip it</div>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="closing">
+    <div class="single-flip-wrap fadeUp d1">
+      <div class="flip-card big" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="dot" style="background:var(--cyan)"></span><h3>Real-Time</h3><span class="tap-hint">Tap to reveal</span></div>
+          <div class="flip-back"><h4><span class="dot-sm" style="background:var(--cyan)"></span>Real-Time</h4><p>Processes input and responds within a strict time limit — critical where delay is not an option.</p></div>
+        </div>
+      </div>
+      <div class="single-caption">Tap the card to flip it</div>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="closing">
+    <div class="single-flip-wrap fadeUp d1">
+      <div class="flip-card big" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front"><span class="dot" style="background:var(--amber)"></span><h3>Mobile</h3><span class="tap-hint">Tap to reveal</span></div>
+          <div class="flip-back"><h4><span class="dot-sm" style="background:var(--amber)"></span>Mobile</h4><p>Built for phones and tablets — balances performance, touch input, and battery life.</p></div>
+        </div>
+      </div>
+      <div class="single-caption">Tap the card to flip it</div>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="closing">
+    <div class="header-panel panel fadeUp d1">
+      <div class="kicker">In Your Own Words</div>
+      <h2>Make It Personal</h2>
+    </div>
+    <div class="stage recessed fadeUp d2" style="padding:36px 40px;">
+      <div class="prompt-eyebrow">Prompt</div>
+      <div class="prompt-text">In your daily life, which type of operating system do you use the most? How does it help you in your everyday tasks?</div>
+    </div>
+    <div class="note-row panel fadeUp d3">
+      <div class="note-icon">✎</div>
+      <p>Answer on a half sheet of paper (crosswise) in 3–5 sentences. Be ready to share one idea with the class.</p>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="closing">
+    <div class="header-panel panel fadeUp d1">
+      <div class="kicker">Check Your Understanding</div>
+      <h2>Quick Quiz Time</h2>
+    </div>
+    <div class="quiz-layout fadeUp d2">
+      <div class="stage recessed" style="padding: clamp(26px,3vw,40px); max-width:900px;">
+        <div class="live-label"><span class="live-dot"></span> LIVE DIAGRAM</div>
+        <div class="quiz-circle recessed-sm">
+          <div class="big-num">10</div>
+          <div class="label">ITEMS</div>
+        </div>
+        <div class="quiz-desc">Identification and matching type, covering all six operating system types.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-phase="closing">
+    <div class="header-panel panel fadeUp d1">
+      <div class="kicker">Before Next Meeting</div>
+      <h2>Assignment</h2>
+    </div>
+    <div class="stage recessed fadeUp d2">
+      <div class="steps">
+        <div class="step">
+          <div class="step-num panel-sm" style="color:var(--cyan)">1</div>
+          <div class="step-body">
+            <h4>Research</h4>
+            <p>Find one (1) real-world example for each type of OS: Batch, Time-Sharing, Distributed, Network, Real-Time, and Mobile.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num panel-sm" style="color:var(--amber)">2</div>
+          <div class="step-body">
+            <h4>Explain</h4>
+            <p>Write a brief explanation of why that operating system best fits the device or scenario you found.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num panel-sm" style="color:var(--cyan)">3</div>
+          <div class="step-body">
+            <h4>Prepare</h4>
+            <p>Write up your output on a half sheet of paper, crosswise, ready to submit next meeting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="caption panel-sm fadeUp d3">Tip: pick devices you actually use — a game console, a smart fridge, a hospital monitor — to make the connection real.</div>
+  </section>
+
+  <section class="slide" data-phase="closing">
+    <div class="closing-slab panel fadeUp d1">
+      <div class="kicker">Thank You</div>
+      <h2>Keep Exploring Operating Systems</h2>
+      <p>See you next meeting with your assignment output.</p>
+      <div class="dots">
+        <div class="pip"><span style="background:var(--cyan)"></span></div>
+        <div class="pip"><span style="background:var(--amber)"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <button class="nav-arrow prev" id="prevBtn" aria-label="Previous slide">←</button>
+  <button class="nav-arrow next" id="nextBtn" aria-label="Next slide">→</button>
+  <div class="progress-badge" id="progressBadge">1 / 1</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
