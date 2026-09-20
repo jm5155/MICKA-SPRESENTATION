@@ -7,26 +7,117 @@
 const OS_TOPICS = [
 { key:"batch", title:"Batch Operating System",
   def:"Jobs with similar needs are collected into a batch and run one after another with no user interaction during execution — a human only loads the batch and collects results afterward.",
-  note:"Jobs queue → CPU runs one at a time → results returned only after the whole batch finishes" },
+  note:"Jobs queue → CPU runs one at a time → results returned only after the whole batch finishes",
+  example:"Bank payroll processing" },
 { key:"timesharing", title:"Time-Sharing (Multitasking) OS",
   def:"The CPU rapidly switches between multiple users' tasks in tiny time slices, so each user feels like they have the machine to themselves.",
-  note:"CPU cycles through each user's slice in rapid rotation — no one waits long" },
+  note:"CPU cycles through each user's slice in rapid rotation — no one waits long",
+  example:"A computer running Chrome, Spotify, and File Explorer at the same time" },
 { key:"distributed", title:"Distributed Operating System",
   def:"Multiple independent, networked computers are coordinated so that, to the user, they appear and behave as a single unified system.",
-  note:"Independent nodes exchange messages to act as one combined system" },
-{ key:"network", title:"Network Operating System",
-  def:"Runs on a server and manages users, security, and shared resources — like files and printers — for computers connected to a local network.",
-  note:"Server manages accounts and shared resources for every connected client" },
-{ key:"rtos", title:"Real-Time Operating System",
-  def:"Processes input and produces output within a strict, predictable deadline. Hard RTOS deadlines are absolute (pacemakers, airbags); Soft RTOS deadlines are important but survivable if missed.",
-  note:"Task must complete before the deadline line — hard limits cannot be missed" },
+  note:"Independent nodes exchange messages to act as one combined system",
+  example:"Multiple computers working together on one task" },
 { key:"mobile", title:"Mobile Operating System",
   def:"Purpose-built for smartphones, tablets, and wearables — optimized for touch input, battery efficiency, and constant connectivity.",
-  note:"Optimized for touch interaction, battery life, and constant connectivity" },
-{ key:"classify", title:"Other Ways to Classify an Operating System",
-  def:"Aside from function, an OS can also be classified by ownership/license and by the platform or device it runs on.",
-  note:"By License: Proprietary vs Free and Open-Source  ·  By Platform: Desktop vs Mobile" }
+  note:"Optimized for touch interaction, battery life, and constant connectivity",
+  example:"An Android smartphone" }
 ];
+
+/* ---------------- Real-world example icon illustrations ---------------- */
+const EXAMPLE_SVG = {
+batch: `
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="200,20 340,90 60,90" fill="none" stroke="#f0a83e" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="70" y="90" width="260" height="18" fill="#f0a83e"/>
+  <rect x="90" y="118" width="26" height="90" rx="4" fill="none" stroke="#8fb8ea" stroke-width="6"/>
+  <rect x="150" y="118" width="26" height="90" rx="4" fill="none" stroke="#8fb8ea" stroke-width="6"/>
+  <rect x="212" y="118" width="26" height="90" rx="4" fill="none" stroke="#8fb8ea" stroke-width="6"/>
+  <rect x="274" y="118" width="26" height="90" rx="4" fill="none" stroke="#8fb8ea" stroke-width="6"/>
+  <rect x="60" y="216" width="280" height="20" fill="#f0a83e"/>
+  <rect x="50" y="236" width="300" height="16" rx="4" fill="#5fd6d1"/>
+  <circle cx="315" cy="205" r="34" fill="#0f1620" stroke="#5fd6d1" stroke-width="6"/>
+  <text x="315" y="216" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="800" font-size="30" fill="#5fd6d1">₱</text>
+</svg>`,
+timesharing: `
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <rect x="30" y="30" width="340" height="200" rx="18" fill="none" stroke="#8fb8ea" stroke-width="6"/>
+  <rect x="30" y="30" width="340" height="46" rx="18" fill="#8fb8ea" opacity="0.18"/>
+  <circle cx="58" cy="53" r="6" fill="#e0707a"/>
+  <circle cx="78" cy="53" r="6" fill="#f0a83e"/>
+  <circle cx="98" cy="53" r="6" fill="#5fd6d1"/>
+  <g transform="translate(78,130)">
+    <circle r="46" fill="none" stroke="#e0707a" stroke-width="7"/>
+    <circle r="14" fill="#e0707a"/>
+    <text x="0" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="18" fill="#9aa8bd">Chrome</text>
+  </g>
+  <g transform="translate(200,130)">
+    <circle r="46" fill="none" stroke="#5fd6d1" stroke-width="7"/>
+    <path d="M-22,-6 Q0,-24 22,-6 M-18,8 Q0,-6 18,8 M-14,22 Q0,10 14,22" fill="none" stroke="#5fd6d1" stroke-width="6" stroke-linecap="round"/>
+    <text x="0" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="18" fill="#9aa8bd">Spotify</text>
+  </g>
+  <g transform="translate(322,130)">
+    <path d="M-32,-20 h24 l8,10 h32 v40 h-64 z" fill="none" stroke="#f0a83e" stroke-width="7" stroke-linejoin="round"/>
+    <text x="0" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="18" fill="#9aa8bd">Explorer</text>
+  </g>
+</svg>`,
+distributed: `
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="#5fd6d1" stroke-width="4" opacity="0.75">
+    <line x1="200" y1="140" x2="70" y2="60"/>
+    <line x1="200" y1="140" x2="330" y2="60"/>
+    <line x1="200" y1="140" x2="70" y2="220"/>
+    <line x1="200" y1="140" x2="330" y2="220"/>
+  </g>
+  <g>
+    <rect x="170" y="105" width="60" height="44" rx="8" fill="#0f1620" stroke="#f0a83e" stroke-width="6"/>
+    <rect x="192" y="149" width="16" height="14" fill="#f0a83e"/>
+    <rect x="178" y="163" width="44" height="8" rx="3" fill="#f0a83e"/>
+  </g>
+  <g transform="translate(40,30)">
+    <rect width="60" height="44" rx="8" fill="#0f1620" stroke="#8fb8ea" stroke-width="6"/>
+    <rect x="22" y="44" width="16" height="12" fill="#8fb8ea"/>
+    <rect x="8" y="56" width="44" height="7" rx="3" fill="#8fb8ea"/>
+  </g>
+  <g transform="translate(300,30)">
+    <rect width="60" height="44" rx="8" fill="#0f1620" stroke="#8fb8ea" stroke-width="6"/>
+    <rect x="22" y="44" width="16" height="12" fill="#8fb8ea"/>
+    <rect x="8" y="56" width="44" height="7" rx="3" fill="#8fb8ea"/>
+  </g>
+  <g transform="translate(40,190)">
+    <rect width="60" height="44" rx="8" fill="#0f1620" stroke="#8fb8ea" stroke-width="6"/>
+    <rect x="22" y="-12" width="16" height="12" fill="#8fb8ea"/>
+    <rect x="8" y="44" width="44" height="7" rx="3" fill="#8fb8ea"/>
+  </g>
+  <g transform="translate(300,190)">
+    <rect width="60" height="44" rx="8" fill="#0f1620" stroke="#8fb8ea" stroke-width="6"/>
+    <rect x="8" y="44" width="44" height="7" rx="3" fill="#8fb8ea"/>
+  </g>
+</svg>`,
+mobile: `
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <rect x="140" y="20" width="120" height="240" rx="22" fill="none" stroke="#8fb8ea" stroke-width="6"/>
+  <rect x="140" y="20" width="120" height="240" rx="22" fill="#8fb8ea" opacity="0.08"/>
+  <circle cx="200" cy="240" r="7" fill="#8fb8ea"/>
+  <g fill="#5fd6d1">
+    <rect x="158" y="46" width="26" height="26" rx="7"/>
+    <rect x="192" y="46" width="26" height="26" rx="7"/>
+    <rect x="226" y="46" width="26" height="26" rx="7"/>
+    <rect x="158" y="80" width="26" height="26" rx="7" opacity="0.55"/>
+    <rect x="192" y="80" width="26" height="26" rx="7" opacity="0.55"/>
+    <rect x="226" y="80" width="26" height="26" rx="7" opacity="0.55"/>
+  </g>
+  <g transform="translate(200,150)">
+    <path d="M-26,-4 a26,26 0 1 1 52,0 z" fill="#f0a83e"/>
+    <rect x="-30" y="-4" width="60" height="26" rx="8" fill="#f0a83e"/>
+    <circle cx="-14" cy="-16" r="3" fill="#0f1620"/>
+    <circle cx="14" cy="-16" r="3" fill="#0f1620"/>
+    <line x1="-26" y1="-24" x2="-18" y2="-14" stroke="#f0a83e" stroke-width="4" stroke-linecap="round"/>
+    <line x1="26" y1="-24" x2="18" y2="-14" stroke="#f0a83e" stroke-width="4" stroke-linecap="round"/>
+    <line x1="-30" y1="4" x2="-38" y2="24" stroke="#f0a83e" stroke-width="6" stroke-linecap="round"/>
+    <line x1="30" y1="4" x2="38" y2="24" stroke="#f0a83e" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>`
+};
 
 /* ---------------- Build the discussion slides into the deck ---------------- */
 (function buildDiscussionSlides(){
@@ -75,6 +166,24 @@ const OS_TOPICS = [
       <div class="caption panel-sm diag-footer fadeUp d3">${topic.note}</div>
     `;
     frag.appendChild(diagram);
+
+    // Example slide — real-world example illustration
+    const example = document.createElement('section');
+    example.className = 'slide';
+    example.dataset.phase = 'discussion';
+    example.dataset.subtype = 'example';
+    example.dataset.topic = topic.key;
+    example.innerHTML = `
+      <div class="header-panel panel fadeUp d1">
+        <div class="kicker">Real-World Example</div>
+        <h2>${topic.title}</h2>
+      </div>
+      <div class="stage fadeUp d2">
+        <div class="example-box">${EXAMPLE_SVG[topic.key] || ""}</div>
+      </div>
+      <div class="caption panel-sm fadeUp d3">${topic.example}</div>
+    `;
+    frag.appendChild(example);
   });
 
   mount.appendChild(frag);
@@ -208,6 +317,8 @@ deckEl.addEventListener('click', (e)=>{
 });
 
 document.addEventListener('keydown', (e)=>{
+  const pickerOverlayEl = document.getElementById('pickerOverlay');
+  if (pickerOverlayEl && pickerOverlayEl.classList.contains('open')) return;
   if (e.key === 'ArrowRight') showSlide(current+1);
   if (e.key === 'ArrowLeft') showSlide(current-1);
   if (e.key === ' ' || e.code === 'Space'){
@@ -978,3 +1089,120 @@ function playAnim(key){
 
 /* ---------------- Boot ---------------- */
 showSlide(0);
+
+/* ---------------- Student Picker (modal widget) ---------------- */
+(function(){
+  const students = [
+    "Alexandrei Raymundo",
+    "Andrei John Geronimo",
+    "Andrie Domingo",
+    "Brian Howard Celon",
+    "Christian Rey Kasilag",
+    "Christine San Jose",
+    "Denmark Balane",
+    "Dwight Penano",
+    "Edrian",
+    "Emanuel Malbarosa",
+    "Ervin James Ramos",
+    "Flores Valenzuela",
+    "Gerald Custodio",
+    "Gerald Velasco",
+    "Janfrey Diezel Dela Cruz",
+    "Jelyn Señoran",
+    "Jerome Gabriel",
+    "Jessie Chris Nierves",
+    "Jm Padilla",
+    "John Cliven Amadeo",
+    "John Edison Silverio",
+    "Johnlawrence Flores Maula",
+    "Justin Ken S. Tejada",
+    "Justine Balicao",
+    "Kairon Esteban",
+    "Mark Anthony Nadal",
+    "Mark Joseph Bosque Urbano",
+    "Pocholo Ombao",
+    "Rafael Gamba Cortez",
+    "Rainier Julliane Dela Cruz",
+    "Ralph Laurence Enriquez",
+    "Renzo Datiles Oranza",
+    "Troy Lits Dancel",
+    "Wendel Silva"
+  ];
+
+  let remaining = [...students];
+
+  const overlay = document.getElementById('pickerOverlay');
+  const openBtn = document.getElementById('pickerOpenBtn');
+  const closeBtn = document.getElementById('pickerCloseBtn');
+  const display = document.getElementById('spDisplay');
+  const pickBtn = document.getElementById('spPickBtn');
+  const resetBtn = document.getElementById('spResetBtn');
+  const counter = document.getElementById('spCounter');
+  const remainingList = document.getElementById('spRemainingList');
+
+  if (!overlay) return;
+
+  function updateCounter(){
+    counter.textContent = `${remaining.length} of ${students.length} remaining`;
+    remainingList.innerHTML = remaining.length
+      ? remaining.map(n => `<span>${n}</span>`).join('')
+      : 'No students left — reset the list.';
+  }
+
+  function pick(){
+    if (remaining.length === 0){
+      display.textContent = "Everyone's been picked! Reset the list.";
+      display.classList.remove('picked');
+      return;
+    }
+    pickBtn.disabled = true;
+    display.classList.remove('picked');
+    display.classList.add('spinning');
+
+    let cycles = 0;
+    const maxCycles = 18;
+    const interval = setInterval(() => {
+      const randomName = remaining[Math.floor(Math.random() * remaining.length)];
+      display.textContent = randomName;
+      cycles++;
+      if (cycles >= maxCycles){
+        clearInterval(interval);
+        const idx = Math.floor(Math.random() * remaining.length);
+        const chosen = remaining[idx];
+        remaining.splice(idx, 1);
+        display.textContent = chosen;
+        display.classList.remove('spinning');
+        display.classList.add('picked');
+        pickBtn.disabled = false;
+        updateCounter();
+      }
+    }, 60);
+  }
+
+  function reset(){
+    remaining = [...students];
+    display.textContent = "Press Pick!";
+    display.classList.remove('picked', 'spinning');
+    updateCounter();
+  }
+
+  function openPicker(){
+    overlay.classList.add('open');
+  }
+  function closePicker(){
+    overlay.classList.remove('open');
+  }
+
+  openBtn.addEventListener('click', openPicker);
+  closeBtn.addEventListener('click', closePicker);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closePicker();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closePicker();
+  });
+  pickBtn.addEventListener('click', pick);
+  resetBtn.addEventListener('click', reset);
+
+  updateCounter();
+})();
