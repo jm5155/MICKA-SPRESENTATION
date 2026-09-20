@@ -258,6 +258,14 @@ h1,h2,h3,.heading{
 #mainSvg{ opacity:0; transform:scale(.97); animation:diagramIn .5s var(--ease) forwards; }
 @keyframes diagramIn{ to{opacity:1; transform:scale(1);} }
 
+.example-box{
+  width:100%; max-width:520px; margin:0 auto;
+  background:var(--bg); border-radius:28px;
+  box-shadow:var(--nm-in); padding:clamp(24px,4vw,44px);
+  display:flex; align-items:center; justify-content:center;
+}
+.example-box svg{ width:100%; height:auto; max-height:340px; }
+
 .lbl{font-size:24px;fill:var(--text-dim);font-family:'Inter',sans-serif;font-weight:500;}
 .lbl-strong{font-size:38px;fill:var(--text-primary);font-weight:800;font-family:'Poppins',sans-serif;}
 .lbl-title{font-size:26px;fill:var(--text-primary);font-weight:700;font-family:'Inter',sans-serif;}
@@ -405,6 +413,18 @@ h1,h2,h3,.heading{
 .quiz-circle .label{ color:var(--text-dim); font-size: clamp(15px,1.6vw,19px); letter-spacing:0.15em; font-weight:700; margin-top:10px; }
 .quiz-desc{ text-align:center; color:var(--text-dim); font-size: clamp(18px,2vw,24px); font-weight:600; padding: 0 20px 30px; max-width:800px; }
 
+/* ---------- MCQ quiz item ---------- */
+.mcq-num{ color:var(--amber); font-weight:700; letter-spacing:0.1em; font-size: clamp(14px,1.4vw,18px); text-transform:uppercase; margin-bottom:16px; }
+.mcq-question{ font-family:'Poppins',sans-serif; font-weight:800; font-size: clamp(26px,3vw,36px); line-height:1.4; color:var(--text-primary); max-width:1050px; margin-bottom:8px; }
+.mcq-options{ width:100%; max-width:900px; display:flex; flex-direction:column; gap:16px; margin-top:26px; }
+.mcq-option{ display:flex; align-items:center; gap:22px; padding: 16px 26px; background:var(--bg); border-radius:16px; box-shadow: var(--nm-out-sm); }
+.mcq-option-letter{
+  width: clamp(40px,4.4vw,52px); height: clamp(40px,4.4vw,52px); border-radius:12px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; background:var(--bg); box-shadow: var(--nm-in-sm);
+  font-family:'Poppins',sans-serif; font-weight:800; font-size: clamp(18px,1.8vw,22px); color:var(--cyan);
+}
+.mcq-option-text{ color:var(--text-dim); font-size: clamp(18px,2vw,24px); font-weight:600; line-height:1.4; }
+
 /* ---------- assignment steps ---------- */
 .steps{ width:100%; max-width:1150px; display:flex; flex-direction:column; gap:30px; }
 .step{ display:flex; align-items:flex-start; gap:32px; }
@@ -451,6 +471,62 @@ h1,h2,h3,.heading{
   font-weight:600; font-size:13px; cursor:pointer; transition: box-shadow .12s var(--ease), transform .12s var(--ease);
 }
 .btn:active{ box-shadow: var(--nm-in-sm); transform: scale(0.96); }
+
+/* ---------- student picker button + modal ---------- */
+.picker-btn{
+  position:absolute; top: clamp(14px,2vh,28px); left: clamp(20px,3vw,44px);
+  padding: 10px 18px; border-radius:12px; background:var(--bg); box-shadow: var(--nm-out-sm);
+  font-family:'Poppins',sans-serif; font-weight:800; font-size:12px; letter-spacing:0.06em;
+  color:var(--amber); z-index:20; cursor:pointer; border:none;
+  display:flex; align-items:center; gap:8px;
+  transition: box-shadow .15s var(--ease), transform .15s var(--ease);
+}
+.picker-btn:hover{ transform: translateY(-1px); }
+.picker-btn:active{ box-shadow: var(--nm-in-sm); transform: scale(0.96); }
+
+.picker-overlay{
+  position:fixed; inset:0; z-index:100;
+  background: rgba(14,18,24,0.72);
+  display:flex; align-items:center; justify-content:center;
+  padding:20px;
+  opacity:0; visibility:hidden; transition: opacity .18s ease;
+}
+.picker-overlay.open{ opacity:1; visibility:visible; }
+
+.sp-card{
+  background:var(--bg); border-radius:30px; padding:40px; width:100%; max-width:480px;
+  box-shadow: var(--nm-out); text-align:center; position:relative;
+  transform: scale(.96); transition: transform .18s ease;
+}
+.picker-overlay.open .sp-card{ transform: scale(1); }
+.sp-close{
+  position:absolute; top:18px; right:18px; width:36px; height:36px; border-radius:10px;
+  background:var(--bg); box-shadow: var(--nm-out-sm); border:none; color:var(--text-dim);
+  font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center;
+}
+.sp-close:active{ box-shadow: var(--nm-in-sm); }
+.sp-title{ font-family:'Poppins',sans-serif; font-size:1.3rem; font-weight:800; margin:0 0 26px; color:var(--text-primary); }
+.sp-display{
+  background:var(--bg); border-radius:20px; padding:30px 20px; margin-bottom:26px; min-height:90px;
+  display:flex; align-items:center; justify-content:center; font-size:1.25rem; font-weight:700;
+  box-shadow: var(--nm-in); transition: all .2s ease; word-break:break-word; color:var(--text-primary);
+}
+.sp-display.picked{ color:var(--cyan); }
+.sp-display.spinning{ color:var(--text-dim); }
+.sp-btn{
+  background:var(--bg); border:none; border-radius:16px; padding:16px 32px; font-size:1rem; font-weight:700;
+  color:var(--text-primary); box-shadow: var(--nm-out-sm); cursor:pointer; width:100%;
+  transition: box-shadow .15s ease;
+}
+.sp-btn:active{ box-shadow: var(--nm-in-sm); }
+.sp-row{ display:flex; gap:12px; margin-top:14px; }
+.sp-row .sp-btn{ font-size:0.85rem; padding:12px 14px; }
+.sp-footer{ margin-top:22px; font-size:0.78rem; color:var(--text-dim); }
+.sp-remaining{
+  margin-top:16px; max-height:150px; overflow-y:auto; text-align:left; background:var(--bg);
+  border-radius:16px; padding:14px 18px; box-shadow: var(--nm-in-sm); font-size:0.8rem; line-height:1.7; color:var(--text-dim);
+}
+.sp-remaining span{ display:inline-block; margin-right:10px; }
 
 @media (max-width: 820px){
   .grid{ grid-template-columns: 1fr 1fr; }
